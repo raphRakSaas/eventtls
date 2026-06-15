@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "target": "claude-project",
+  "profile": "minimal",
+  "include": [
+    "framework:angular",
+    "skill:angular-developer",
+    "skill:postgres-patterns",
+    "skill:tdd-workflow",
+    "skill:verification-loop"
+  ]
+}

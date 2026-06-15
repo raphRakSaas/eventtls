@@ -1,0 +1,47 @@
+---
+description: Contexte projet EventTLS — stack, architecture, conventions
+alwaysApply: true
+---
+
+# EventTLS — Règles projet
+
+Plateforme de découverte d'événements à Toulouse. Objectif : apprendre Angular 17+ et démontrer des compétences marché.
+
+## Stack
+
+- Angular 17+ standalone, Signals (pas NgRx)
+- Angular Material + Tailwind CSS
+- Supabase (Auth, DB, Realtime, Storage)
+- Leaflet + OpenStreetMap
+- ngx-charts, date-fns
+
+## Architecture
+
+```
+src/app/
+├── core/       # services, guards, interceptors, resolvers (singleton root)
+├── shared/     # composants/pipes réutilisables
+└── features/   # home, events, auth, dashboard, profile (lazy loading)
+```
+
+## Conventions
+
+- Composants standalone uniquement
+- Guards/interceptors/resolvers **fonctionnels** (Angular 17+)
+- State local avec `signal()`, `computed()`, `effect()` — pas de NgRx
+- UI en **français**
+- Nommage variables : pas de noms à une seule lettre
+- Référence complète : `cahier_de_charge.md`
+
+## Avant de coder une tâche
+
+1. Lire l'ID de tâche dans `TASKS.md`
+2. Cocher `[~]` quand tu commences, `[x]` quand c'est fait
+3. Mettre à jour `docs/CURRENT-SPRINT.md`
+
+## Agents
+
+- **Cursor** : implémentation + agents ECC (`.cursor/agents/ecc-*.md`)
+- **Claude Code** : `/plan`, `/code-review`, agents dans `.claude/agents/`
+- **[ECC](https://github.com/affaan-m/ECC)** : skills `angular-developer`, hooks, orchestration multi-agents
+- Voir `AGENTS.md` et `docs/ECC-SETUP.md`
