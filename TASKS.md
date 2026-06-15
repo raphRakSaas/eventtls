@@ -3,7 +3,7 @@
 > **Source de vérité** pour l'avancement du projet.  
 > Légende : `[ ]` à faire · `[~]` en cours · `[x]` terminé · `[—]` annulé
 
-**Dernière mise à jour :** Phase 0 — mise en place
+**Dernière mise à jour :** Phase 0 — scaffolding Angular terminé
 
 ---
 
@@ -18,9 +18,9 @@
 | EVT-0.5 | Préparer migration Supabase SQL | Cursor | [x] |
 | EVT-0.6 | Créer projet Supabase + appliquer migration | Toi | [ ] |
 | EVT-0.7 | Vérifier Node.js + Angular CLI installés | Toi | [ ] |
-| EVT-0.8 | `ng new eventtls` + dépendances initiales | Cursor | [ ] |
-| EVT-0.9 | Configurer Tailwind + Angular Material + thème | Cursor | [ ] |
-| EVT-0.10 | Configurer environments Supabase | Cursor | [ ] |
+| EVT-0.8 | `ng new eventtls` + dépendances initiales | Cursor | [x] |
+| EVT-0.9 | Configurer Tailwind + Angular Material + thème | Cursor | [x] |
+| EVT-0.10 | Configurer environments Supabase | Cursor | [x] |
 
 ---
 
@@ -154,11 +154,11 @@
 
 | Phase | Total | Fait | % |
 |-------|-------|------|---|
-| 0 | 10 | 5 | 50% |
+| 0 | 10 | 8 | 80% |
 | 1 | 9 | 0 | 0% |
 | 2 | 10 | 0 | 0% |
 | 3 | 9 | 0 | 0% |
 | 4 | 7 | 0 | 0% |
 | 5 | 8 | 0 | 0% |
 | 6 | 7 | 0 | 0% |
-| **Total** | **60** | **5** | **8%** |
+| **Total** | **60** | **8** | **13%** |

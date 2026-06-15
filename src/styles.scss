@@ -1,0 +1,35 @@
+@use '@angular/material' as mat;
+@use 'styles/ville-rose';
+
+html {
+  height: 100%;
+
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$red-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: (
+        plain-family: Inter,
+        brand-family: 'Playfair Display',
+      ),
+      density: 0,
+    )
+  );
+}
+
+body {
+  color-scheme: light;
+  background-color: var(--ville-surface);
+  color: var(--ville-text);
+  font-family: var(--font-body);
+  margin: 0;
+  height: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+}

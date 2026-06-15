@@ -2,14 +2,16 @@
 
 ## Prérequis système
 
-| Outil | Version min | Vérification | Statut |
-|-------|-------------|--------------|--------|
-| Node.js | 20+ | `node -v` | [ ] |
-| npm | 10+ | `npm -v` | [ ] |
-| Angular CLI | 17+ | `ng version` | [ ] |
-| Git | — | `git --version` | [x] |
-| Compte Supabase | gratuit | supabase.com | [ ] |
-| Compte Vercel | gratuit (phase 6) | vercel.com | [ ] |
+
+| Outil           | Version min       | Vérification    | Statut |
+| --------------- | ----------------- | --------------- | ------ |
+| Node.js         | 20+               | `node -v`       | [ ]    |
+| npm             | 10+               | `npm -v`        | [ ]    |
+| Angular CLI     | 17+               | `ng version`    | [ ]    |
+| Git             | —                 | `git --version` | [x]    |
+| Compte Supabase | gratuit           | supabase.com    | [ ]    |
+| Compte Vercel   | gratuit (phase 6) | vercel.com      | [ ]    |
+
 
 ### Installer Angular CLI (si absent)
 
@@ -38,18 +40,21 @@ ng version
 ### 3. Récupérer les clés
 
 Settings → API :
+
 - `Project URL` → `SUPABASE_URL`
 - `anon public` → `SUPABASE_ANON_KEY`
 
 ### 4. Configurer Auth
 
 Authentication → Providers :
+
 - Email activé (par défaut)
 - Site URL : `http://localhost:4200` (dev)
 
 ### 5. Storage (phase 4)
 
 Storage → New bucket :
+
 - Nom : `event-images`
 - Public : oui (lecture publique)
 

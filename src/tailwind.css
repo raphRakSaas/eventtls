@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: var(--ville-primary);
+  --color-primary-light: var(--ville-primary-light);
+  --color-surface: var(--ville-surface);
+  --color-surface-alt: var(--ville-surface-alt);
+  --color-accent: var(--ville-accent);
+  --color-success: var(--ville-success);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}

@@ -2,7 +2,7 @@
 
 Plateforme de découverte et gestion d'événements à Toulouse.
 
-**Stack :** Angular 17+ · Supabase · Open Data Toulouse Métropole · Leaflet · Vercel
+**Stack :** Angular 21 · Supabase · Open Data Toulouse Métropole · Leaflet · Vercel
 
 ## Statut
 
@@ -29,13 +29,18 @@ Plateforme de découverte et gestion d'événements à Toulouse.
 | [docs/WORKFLOW.md](./docs/WORKFLOW.md) | Comment travailler avec les IA |
 | [docs/CURRENT-SPRINT.md](./docs/CURRENT-SPRINT.md) | Sprint en cours |
 
-## Démarrage rapide (quand le code existera)
+## Démarrage rapide
 
 ```bash
-cp .env.example .env          # puis remplir les clés Supabase
+cp .env.example .env.local
+# Renseigner SUPABASE_URL et SUPABASE_ANON_KEY dans .env.local
+# puis copier les mêmes valeurs dans src/environments/environment.development.ts
+
 npm install
 ng serve
 ```
+
+Ouvrir [http://localhost:4200](http://localhost:4200).
 
 ## Structure prévue
 

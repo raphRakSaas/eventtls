@@ -5,7 +5,7 @@
 ## En cours
 
 **Phase :** 0 — Mise en place  
-**Objectif :** Terminer la préparation avant `ng new`  
+**Objectif :** Finaliser Supabase + passer à la Phase 1  
 **Date début :** 15 juin 2026
 
 ## Tâches du sprint
@@ -14,26 +14,24 @@
 |----------|-----|-------|--------|
 | 1 | EVT-0.6 | Créer projet Supabase + appliquer migration | [ ] |
 | 2 | EVT-0.7 | Vérifier Node.js ≥ 20 + Angular CLI | [ ] |
-| 3 | EVT-0.8 | `ng new eventtls` + npm install deps | [ ] |
-| 4 | EVT-0.9 | Tailwind + Material + thème Ville Rose | [ ] |
-| 5 | EVT-0.10 | Environments Supabase | [ ] |
+| 3 | EVT-0.8 | `ng new eventtls` + npm install deps | [x] |
+| 4 | EVT-0.9 | Tailwind + Material + thème Ville Rose | [x] |
+| 5 | EVT-0.10 | Environments Supabase | [x] |
 
 ## Prochaine session recommandée
 
 **Durée :** 1-2h  
-**Pilote :** Toi pour Supabase, puis Cursor pour le scaffolding Angular
+**Pilote :** Cursor pour EVT-1.1 (structure core/shared/features)
 
 ### Checklist session
 
-- [ ] Compte Supabase créé sur [supabase.com](https://supabase.com)
-- [ ] SQL exécuté depuis `supabase/migrations/001_initial_schema.sql`
-- [ ] Clés API copiées dans `.env`
-- [ ] `node -v` et `ng version` OK
-- [ ] Projet Angular créé
+- [ ] Clés Supabase copiées dans `src/environments/environment.development.ts`
+- [ ] `ng serve` OK sur http://localhost:4200
+- [ ] Démarrer EVT-1.1 — structure dossiers
 
 ## Notes de session
 
-_Aucune note pour l'instant._
+- **15 juin 2026** — Scaffolding Angular 21 : Tailwind v4, Material 21, thème Ville Rose, environments typés Supabase. `ng build` OK.
 
 ## Blocages
 
