@@ -1,1 +1,98 @@
-<p>register works!</p>
+<section class="auth-page">
+    <div class="auth-card">
+      <h1>Inscription</h1>
+      <p class="auth-subtitle">Rejoignez EventTLS pour suivre les événements toulousains</p>
+  
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+        <mat-form-field appearance="outline" class="auth-field">
+          <mat-label>Nom affiché</mat-label>
+          <input matInput type="text" formControlName="displayName" autocomplete="name" />
+          @if (
+            registerForm.controls.displayName.touched &&
+            registerForm.controls.displayName.hasError('required')
+          ) {
+            <mat-error>Le nom est obligatoire.</mat-error>
+          }
+          @if (
+            registerForm.controls.displayName.touched &&
+            registerForm.controls.displayName.hasError('minlength')
+          ) {
+            <mat-error>2 caractères minimum.</mat-error>
+          }
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="auth-field">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" autocomplete="email" />
+          @if (registerForm.controls.email.touched && registerForm.controls.email.hasError('required')) {
+            <mat-error>L'email est obligatoire.</mat-error>
+          }
+          @if (registerForm.controls.email.touched && registerForm.controls.email.hasError('email')) {
+            <mat-error>Format d'email invalide.</mat-error>
+          }
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="auth-field">
+          <mat-label>Mot de passe</mat-label>
+          <input
+            matInput
+            type="password"
+            formControlName="password"
+            autocomplete="new-password"
+          />
+          @if (
+            registerForm.controls.password.touched &&
+            registerForm.controls.password.hasError('required')
+          ) {
+            <mat-error>Le mot de passe est obligatoire.</mat-error>
+          }
+          @if (
+            registerForm.controls.password.touched &&
+            registerForm.controls.password.hasError('minlength')
+          ) {
+            <mat-error>6 caractères minimum.</mat-error>
+          }
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="auth-field">
+          <mat-label>Confirmer le mot de passe</mat-label>
+          <input
+            matInput
+            type="password"
+            formControlName="confirmPassword"
+            autocomplete="new-password"
+          />
+          @if (
+            registerForm.controls.confirmPassword.touched &&
+            registerForm.controls.confirmPassword.hasError('required')
+          ) {
+            <mat-error>La confirmation est obligatoire.</mat-error>
+          }
+          @if (registerForm.touched && registerForm.hasError('passwordMismatch')) {
+            <mat-error>Les mots de passe ne correspondent pas.</mat-error>
+          }
+        </mat-form-field>
+  
+        @if (errorMessage()) {
+          <p class="auth-error" role="alert">{{ errorMessage() }}</p>
+        }
+  
+        @if (successMessage()) {
+          <p class="auth-success" role="status">{{ successMessage() }}</p>
+        }
+  
+        <button mat-flat-button color="primary" type="submit" [disabled]="isLoading()">
+          @if (isLoading()) {
+            <mat-spinner diameter="20"></mat-spinner>
+          } @else {
+            Créer mon compte
+          }
+        </button>
+      </form>
+  
+      <p class="auth-footer">
+        Déjà inscrit ?
+        <a routerLink="/auth/login">Se connecter</a>
+      </p>
+    </div>
+  </section>

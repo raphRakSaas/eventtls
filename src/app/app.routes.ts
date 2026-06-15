@@ -1,5 +1,8 @@
 import { Routes } from '@angular/router';
 
+import { authGuard } from './core/guards/auth.guard';
+import { roleGuard } from './core/guards/role.guard';
+
 export const routes: Routes = [
   {
     path: '',
@@ -28,11 +31,13 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
+    canActivate: [authGuard, roleGuard('organizer')],
     loadChildren: () =>
       import('./features/dashboard/dashboard.routes').then((module) => module.dashboardRoutes),
   },
   {
     path: 'profile',
+    canActivate: [authGuard],
     loadComponent: () =>
       import('./features/profile/profile/profile').then((module) => module.Profile),
   },

@@ -1,0 +1,35 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.btn-primary {
+  background: var(--ville-primary);
+  color: white;
+  box-shadow: 0 4px 14px rgb(192 57 43 / 30%);
+
+  &:hover {
+    background: var(--ville-primary-light);
+  }
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--ville-text);
+  border: 1px solid rgb(26 26 26 / 12%);
+
+  &:hover {
+    border-color: var(--ville-primary);
+    color: var(--ville-primary);
+  }
+}

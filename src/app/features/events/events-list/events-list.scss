@@ -1,0 +1,65 @@
+.page-header {
+  padding: 2.5rem 1.5rem 1.5rem;
+  background: var(--ville-surface-alt);
+  border-bottom: 1px solid rgb(192 57 43 / 8%);
+}
+
+.page-header-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.page-eyebrow {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ville-accent);
+}
+
+.page-header h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.page-lead {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--ville-text-muted);
+  line-height: 1.6;
+}
+
+.events-placeholder {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.events-placeholder-card {
+  max-width: 28rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border-radius: 20px;
+  background: white;
+  border: 1px dashed rgb(192 57 43 / 25%);
+  box-shadow: 0 8px 32px rgb(26 26 26 / 5%);
+
+  h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.35rem;
+    color: var(--ville-primary);
+  }
+
+  p {
+    margin: 0 0 1.5rem;
+    color: var(--ville-text-muted);
+    line-height: 1.6;
+  }
+}
+
+.events-placeholder-icon {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}

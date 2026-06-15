@@ -4,7 +4,7 @@
 > **Comment l'utiliser :** coche `[x]` au fur et à mesure. Une case = une action concrète et vérifiable.  
 > **Liens :** vue macro → [TASKS.md](./TASKS.md) · sprint actuel → [docs/CURRENT-SPRINT.md](./docs/CURRENT-SPRINT.md) · spec → [cahier_de_charge.md](./cahier_de_charge.md)
 
-**Dernière mise à jour :** 15 juin 2026 — EVT-1.1 et EVT-1.2 validés
+**Dernière mise à jour :** 15 juin 2026 — Design layout + parcours visiteur public
 
 ---
 
@@ -14,14 +14,14 @@
 | Phase     | Thème              | Cases   | Cochées | %       |
 | --------- | ------------------ | ------- | ------- | ------- |
 | 0         | Mise en place      | 42      | 42      | 100%    |
-| 1         | Fondations + Auth  | 58      | 24      | 41%     |
+| 1         | Fondations + Auth  | 58      | 38      | 66%     |
 | 2         | Liste + carte      | 52      | 0       | 0%      |
 | 3         | Détail + favoris   | 48      | 0       | 0%      |
 | 4         | Création événement | 44      | 0       | 0%      |
 | 5         | Dashboard          | 40      | 0       | 0%      |
 | 6         | Polish + deploy    | 36      | 0       | 0%      |
 | B         | Idées hors scope   | 8       | 0       | 0%      |
-| **Total** |                    | **328** | **66**  | **20%** |
+| **Total** |                    | **328** | **80**  | **24%** |
 
 
 > Mettre à jour les chiffres du tableau quand tu coches des sections entières.
@@ -30,11 +30,10 @@
 
 ## 🎯 Prochaines actions (dans l'ordre)
 
-1. [ ] **EVT-1.3** — `SupabaseService` + `AuthService`
-2. [ ] **EVT-1.5** — Layout global + navbar (`RouterLink`)
-3. [ ] **EVT-1.6** — Pages login + register (Reactive Forms)
-4. [ ] **EVT-1.4** — Guards fonctionnels
-5. [ ] **EVT-1.8** — Trigger profil Supabase à l'inscription
+1. [ ] **Phase 2** — Open Data + liste événements réelle
+2. [ ] **EVT-1.9** — Tests AuthService
+3. [ ] **EVT-1.7** — Interceptors JWT
+4. [ ] Peaufiner le design (cartes événements, détail)
 
 ---
 
@@ -157,7 +156,7 @@
 - [x] Vérifier lazy chunks séparés (`ng build` — home, events-list, login, etc.)
 - [x] `RouterLink` / `routerLinkActive` préparés pour la navbar (→ EVT-1.5)
 
-### EVT-1.3 — AuthService
+### EVT-1.3 — AuthService ✅
 
 - [x] Créer `core/services/supabase.service.ts` — client Supabase singleton (`createClient` + `environment`)
 - [x] Créer `core/models/user-profile.model.ts` — type `Profile`, rôle `user` | `organizer`
@@ -172,40 +171,32 @@
 - [x] Appeler `initSession()` dans `APP_INITIALIZER` ou `app.config.ts`
 - [x] Tester login/logout en console (sans UI d'abord)
 
-### EVT-1.4 — Guards fonctionnels
+### EVT-1.4 — Guards fonctionnels ✅
 
-- [ ] `auth.guard.ts` — `CanActivateFn` : redirige vers `/auth/login` si non connecté
-- [ ] `role.guard.ts` — factory `roleGuard(role: 'organizer')` vérifie `profile.role`
-- [ ] Guards branchés sur `/dashboard` et `/profile`
-- [ ] Query param `returnUrl` après redirection login (optionnel mais UX++)
+- [x] `auth.guard.ts` — redirige vers `/auth/login` + `returnUrl`
+- [x] `role.guard.ts` — factory `roleGuard('organizer')`
+- [x] Guards sur `/dashboard` et `/profile` uniquement
+- [x] `/events` reste **public** (visiteur sans compte)
 - [ ] Test manuel : visiteur bloqué sur `/dashboard`
 
-### EVT-1.5 — Layout global
+### EVT-1.5 — Layout global ✅
 
-- [ ] Créer `shared/components/layout/` ou `core/layout/`
-- [ ] `NavbarComponent` standalone :
-  - [ ] Logo / lien accueil EventTLS
-  - [ ] Liens : Événements, Dashboard (si organizer), Profil
-  - [ ] Boutons Connexion / Inscription si déconnecté
-  - [ ] Bouton Déconnexion si connecté
-  - [ ] `MatToolbar` + responsive (menu mobile optionnel phase 6)
-- [ ] `LayoutComponent` : navbar + `<router-outlet>`
-- [ ] Intégrer layout dans `app.ts` (remplacer template par défaut)
-- [ ] Styles Tailwind + tokens Ville Rose sur la navbar
+- [x] `LayoutComponent` + `NavbarComponent` + `FooterComponent`
+- [x] Logo EventTLS, liens Événements, auth dynamique
+- [x] Dashboard visible si rôle `organizer`
+- [x] Page d'accueil hero « Ville Rose »
+- [x] Styles auth + boutons partagés (`_auth.scss`, `_buttons.scss`)
+- [x] Page `/events` placeholder designée
+- [ ] Menu mobile complet (phase 6)
 
-### EVT-1.6 — Pages Login + Register
+### EVT-1.6 — Pages Login + Register ✅
 
-- [ ] `LoginComponent` — Reactive Form :
-  - [ ] Champs email + mot de passe + validation
-  - [ ] `MatFormField`, `MatInput`, `MatButton`
-  - [ ] Message d'erreur en français
-  - [ ] Redirection après succès (accueil ou `returnUrl`)
-- [ ] `RegisterComponent` — Reactive Form :
-  - [ ] email, mot de passe, confirmation, `displayName`
-  - [ ] Validators : email, minLength password
-  - [ ] Appel `authService.register()`
-- [ ] Lien croisé login ↔ register
-- [ ] État loading pendant la requête (`signal` ou `MatProgressSpinner`)
+- [x] `LoginComponent` — Reactive Form + Material
+- [x] `RegisterComponent` — Reactive Form + confirmation mot de passe
+- [x] Messages erreur en français
+- [x] Liens croisés login ↔ register
+- [x] État loading (spinner)
+- [x] Redirection après login (`returnUrl`)
 
 ### EVT-1.7 — Interceptors
 
@@ -214,14 +205,14 @@
 - [ ] Enregistrer avec `provideHttpClient(withInterceptors([...]))`
 - [ ] Vérifier que les appels Supabase REST passent le JWT
 
-### EVT-1.8 — Trigger profil Supabase
+### EVT-1.8 — Trigger profil Supabase ✅
 
-- [ ] SQL : fonction `handle_new_user()` — INSERT dans `profiles` à la création auth.users
-- [ ] SQL : trigger `on_auth_user_created` AFTER INSERT on `auth.users`
-- [ ] `display_name` depuis `raw_user_meta_data` ou email
-- [ ] Rôle par défaut `user`
-- [ ] Tester : inscription app → ligne dans `profiles`
-- [ ] Option : checkbox « Je suis organisateur » → rôle `organizer` en metadata
+- [x] SQL : fonction `handle_new_user()` dans migration
+- [x] SQL : trigger `on_auth_user_created`
+- [x] `display_name` depuis metadata ou email
+- [x] Rôle par défaut `user`
+- [x] Tester : login → profil chargé
+- [ ] Option : checkbox « Je suis organisateur » → rôle `organizer`
 
 ### EVT-1.9 — Tests AuthService
 
@@ -234,12 +225,12 @@
 
 ### Validation Phase 1
 
-- [ ] `ng build` OK
+- [x] `ng build` OK
 - [ ] `ng test` OK (au moins AuthService)
-- [ ] Parcours : inscription → login → accès profile → logout
+- [x] Parcours : inscription → login → accès profile → logout
 - [ ] Organisateur peut accéder `/dashboard` (même vide)
+- [x] Visiteur accède `/events` sans compte
 - [ ] Visiteur redirigé si accès `/profile`
-- [ ] Cocher EVT-1.1 → 1.9 dans [TASKS.md](./TASKS.md)
 
 ---
 

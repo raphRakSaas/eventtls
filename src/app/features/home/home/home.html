@@ -1,2 +1,55 @@
-<h1 class="text-2xl font-bold text-primary">Bienvenue sur EventTLS</h1>
-<p class="text-ville-text-muted">Découvrez les événements à Toulouse</p>
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-badge">Open Data · Toulouse Métropole</p>
+    <h1 class="hero-title">La Ville Rose,<br />événement après événement</h1>
+    <p class="hero-lead">
+      Concerts, expositions, festivals et sorties culturelles — explorez librement ce qui se
+      passe près de chez vous.
+    </p>
+
+    <div class="hero-actions">
+      <a routerLink="/events" class="btn btn-primary">Explorer les événements</a>
+      <a routerLink="/auth/register" class="btn btn-secondary">Créer un compte</a>
+    </div>
+
+    <p class="hero-note">
+      Aucun compte requis pour parcourir. Inscrivez-vous uniquement pour réserver, favoriser ou
+      organiser.
+    </p>
+  </div>
+
+  <div class="hero-cards" aria-hidden="true">
+    <article class="hero-card hero-card--1">
+      <span class="hero-card-label">Ce week-end</span>
+      <strong>Jazz au Bazacle</strong>
+    </article>
+    <article class="hero-card hero-card--2">
+      <span class="hero-card-label">Expo</span>
+      <strong>Les Abattoirs</strong>
+    </article>
+    <article class="hero-card hero-card--3">
+      <span class="hero-card-label">Marché</span>
+      <strong>Place du Capitole</strong>
+    </article>
+  </div>
+</section>
+
+<section class="home-features">
+  <article class="feature-card">
+    <h2>Découvrir</h2>
+    <p>Liste, recherche et carte des événements officiels toulousains.</p>
+    <a routerLink="/events" class="feature-link">Voir la programmation →</a>
+  </article>
+
+  <article class="feature-card">
+    <h2>Participer</h2>
+    <p>Inscrivez-vous à un événement et retrouvez vos favoris sur votre profil.</p>
+    <a routerLink="/auth/register" class="feature-link">Créer un compte →</a>
+  </article>
+
+  <article class="feature-card">
+    <h2>Organiser</h2>
+    <p>Publiez vos événements et suivez vos statistiques depuis le dashboard.</p>
+    <a routerLink="/auth/login" class="feature-link">Espace organisateur →</a>
+  </article>
+</section>

@@ -1,0 +1,29 @@
+<mat-toolbar class="navbar">
+  <a routerLink="/" class="navbar-brand">
+    <span class="navbar-logo">EventTLS</span>
+    <span class="navbar-tagline">Toulouse</span>
+  </a>
+
+  <nav class="navbar-links" aria-label="Navigation principale">
+    <a routerLink="/events" routerLinkActive="is-active" class="navbar-link">Événements</a>
+
+    @if (authService.isAuthenticated()) {
+      <a routerLink="/profile" routerLinkActive="is-active" class="navbar-link">Profil</a>
+
+      @if (authService.profile()?.role === 'organizer') {
+        <a routerLink="/dashboard" routerLinkActive="is-active" class="navbar-link">
+          Dashboard
+        </a>
+      }
+
+      <button mat-button type="button" class="navbar-link navbar-logout" (click)="logout()">
+        Déconnexion
+      </button>
+    } @else {
+      <a routerLink="/auth/login" routerLinkActive="is-active" class="navbar-link">Connexion</a>
+      <a routerLink="/auth/register" mat-flat-button color="primary" class="navbar-cta">
+        S'inscrire
+      </a>
+    }
+  </nav>
+</mat-toolbar>

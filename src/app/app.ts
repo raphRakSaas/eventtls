@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+
+import { Layout } from './shared/components/layout/layout';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  template: `<router-outlet />`,
-  styleUrl: './app.scss'
+  imports: [Layout],
+  template: `<app-layout />`,
+  styleUrl: './app.scss',
 })
-export class App {
-  protected readonly title = signal('eventtls');
-}
+export class App {}

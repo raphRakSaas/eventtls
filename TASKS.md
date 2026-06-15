@@ -33,12 +33,12 @@
 |----|-------|-------------------|-------|--------|
 | EVT-1.1 | Structure dossiers core/shared/features | Architecture | Cursor | [x] |
 | EVT-1.2 | `app.routes.ts` + lazy loading | Routing | Cursor | [x] |
-| EVT-1.3 | `AuthService` (login, register, session) | Services, DI, Signals | Cursor | [ ] |
-| EVT-1.4 | `auth.guard.ts` + `role.guard.ts` | Guards fonctionnels | Claude Code | [ ] |
-| EVT-1.5 | Layout global (navbar + router-outlet) | Composants standalone | Cursor | [ ] |
-| EVT-1.6 | Pages login + register (Reactive Forms) | Reactive Forms | Cursor | [ ] |
+| EVT-1.3 | `AuthService` (login, register, session) | Services, DI, Signals | Cursor | [x] |
+| EVT-1.4 | `auth.guard.ts` + `role.guard.ts` | Guards fonctionnels | Claude Code | [x] |
+| EVT-1.5 | Layout global (navbar + router-outlet) | Composants standalone | Cursor | [x] |
+| EVT-1.6 | Pages login + register (Reactive Forms) | Reactive Forms | Cursor | [x] |
 | EVT-1.7 | `auth.interceptor.ts` + `error.interceptor.ts` | Interceptors | Claude Code | [ ] |
-| EVT-1.8 | Trigger profil auto à l'inscription (Supabase) | Supabase Auth | Toi + Cursor | [ ] |
+| EVT-1.8 | Trigger profil auto à l'inscription (Supabase) | Supabase Auth | Toi + Cursor | [x] |
 | EVT-1.9 | Tests unitaires AuthService | Testing | Claude Code tdd-guide | [ ] |
 
 **Critère de fin de phase :** Login/register fonctionnels, guards actifs, `ng build` OK.
@@ -156,10 +156,10 @@
 | Phase | Total | Fait | % |
 |-------|-------|------|---|
 | 0 | 10 | 10 | 100% |
-| 1 | 9 | 2 | 22% |
+| 1 | 9 | 6 | 67% |
 | 2 | 10 | 0 | 0% |
 | 3 | 9 | 0 | 0% |
 | 4 | 7 | 0 | 0% |
 | 5 | 8 | 0 | 0% |
 | 6 | 7 | 0 | 0% |
-| **Total** | **60** | **12** | **20%** |
+| **Total** | **60** | **16** | **27%** |
