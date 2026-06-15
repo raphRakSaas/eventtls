@@ -1,42 +1,83 @@
-# Sprint actuel — Phase 0
+# Sprint actuel — Phase 1 : Fondations
 
-> Mettre à jour ce fichier à chaque session.
+> Mettre à jour ce fichier à chaque session.  
+> Checklist détaillée → [BACKLOG.md](../BACKLOG.md)
 
 ## En cours
 
-**Phase :** 0 — Mise en place  
-**Objectif :** Finaliser Supabase + passer à la Phase 1  
-**Date début :** 15 juin 2026
+**Phase :** **1 — Fondations + Auth**  
+**Objectif sprint :** structure Angular, routing, AuthService, login/register  
+**Date début Phase 1 :** 15 juin 2026
 
-## Tâches du sprint
+---
 
-| Priorité | ID | Tâche | Statut |
-|----------|-----|-------|--------|
-| 1 | EVT-0.6 | Créer projet Supabase + appliquer migration | [ ] |
-| 2 | EVT-0.7 | Vérifier Node.js ≥ 20 + Angular CLI | [ ] |
-| 3 | EVT-0.8 | `ng new eventtls` + npm install deps | [x] |
-| 4 | EVT-0.9 | Tailwind + Material + thème Ville Rose | [x] |
-| 5 | EVT-0.10 | Environments Supabase | [x] |
+## Cette session — à faire en priorité
 
-## Prochaine session recommandée
+| # | ID | Action | Fichier / commande | Statut |
+|---|-----|--------|-------------------|--------|
+| 1 | EVT-1.1 | Créer arborescence core/shared/features | `src/app/` | [ ] |
+| 2 | EVT-1.2 | Routes + lazy loading | `app.routes.ts` | [ ] |
+| 3 | EVT-1.3 | Supabase client + AuthService | `core/services/` | [ ] |
+| 4 | EVT-1.5 | Layout global (navbar) | `shared/components/` | [ ] |
+| 5 | EVT-1.6 | Pages login + register | `features/auth/` | [ ] |
+| 6 | EVT-1.8 | Trigger profil auto à l'inscription | SQL Supabase | [ ] |
 
-**Durée :** 1-2h  
-**Pilote :** Cursor pour EVT-1.1 (structure core/shared/features)
+---
 
-### Checklist session
+## Phase 0 — terminée ✅
 
-- [ ] Clés Supabase dans `.env.local` puis `npm run setup:env`
-- [ ] `ng serve` OK sur http://localhost:4200
-- [ ] Démarrer EVT-1.1 — structure dossiers
+- [x] EVT-0.1 → EVT-0.10 — Repo, Angular, Tailwind, Material, env, Supabase
+- [x] Migration SQL appliquée sur Supabase
+- [x] Auth URL configurée (`http://localhost:4200`)
+- [x] `ng serve` OK — http://localhost:4200
+
+> La page « Hello, eventtls » est le template Angular par défaut — normal pour l'instant. Le layout EventTLS arrive en EVT-1.5.
+
+---
+
+## Checklist rapide Phase 1
+
+- [x] `.env.local` rempli
+- [x] `ng serve` fonctionne
+- [x] Tables Supabase créées
+- [ ] `npm run setup:env` à jour
+- [ ] Structure `core/` / `shared/` / `features/` créée
+- [ ] Première route custom (home) remplace le template par défaut
+
+---
+
+## Prochaine session (estimation 2–3 h)
+
+**Prompt suggéré pour Cursor :**
+```
+Tâche EVT-1.1 + EVT-1.2 — Structure + routing
+Référence : BACKLOG.md Phase 1, cahier_de_charge.md §3
+Scope : créer dossiers core/shared/features + app.routes.ts lazy loading
+Ne pas toucher à l'auth encore. ng build doit passer.
+```
+
+Puis EVT-1.3 (AuthService) dans la même session ou la suivante.
+
+---
 
 ## Notes de session
 
-- **15 juin 2026** — Scaffolding Angular 21 : Tailwind v4, Material 21, thème Ville Rose, environments typés Supabase. `ng build` OK.
+| Date | Note |
+|------|------|
+| 15 juin 2026 | Scaffolding Angular 21, thème Ville Rose, env secrets gitignored |
+| 15 juin 2026 | BACKLOG.md créé |
+| 15 juin 2026 | **Phase 0 validée** — migration Supabase + Auth URL + ng serve OK |
+
+---
 
 ## Blocages
 
 _Aucun._
 
-## Après ce sprint
+---
 
-Passer à **Phase 1 — Semaine 1 : Fondations** (EVT-1.1 → EVT-1.9)
+## Critère de fin Phase 1
+
+Login/register OK · guards actifs · layout global · interceptors · trigger profil · tests AuthService.
+
+Voir [BACKLOG.md](../BACKLOG.md) section « Validation Phase 1 ».

@@ -8,8 +8,8 @@ Plateforme de découverte et gestion d'événements à Toulouse.
 
 | Phase | Semaine | Thème | Statut |
 |-------|---------|-------|--------|
-| 0 | — | Mise en place (ce repo) | 🟡 En cours |
-| 1 | S1 | Fondations Angular + Auth | ⬜ À faire |
+| 0 | — | Mise en place | ✅ Terminé |
+| 1 | S1 | Fondations Angular + Auth | 🟡 En cours |
 | 2 | S2 | Liste événements + carte | ⬜ À faire |
 | 3 | S3 | Détail + inscription + favoris | ⬜ À faire |
 | 4 | S4 | Création événement | ⬜ À faire |
@@ -21,7 +21,8 @@ Plateforme de découverte et gestion d'événements à Toulouse.
 | Fichier | Rôle |
 |---------|------|
 | [cahier_de_charge.md](./cahier_de_charge.md) | Spécifications techniques complètes |
-| [TASKS.md](./TASKS.md) | Suivi de tâches détaillé (source de vérité) |
+| [TASKS.md](./TASKS.md) | Suivi macro (IDs EVT-0.1 → EVT-6.7) |
+| [BACKLOG.md](./BACKLOG.md) | Checklist détaillée — cocher au fur et à mesure |
 | [AGENTS.md](./AGENTS.md) | Workflow multi-agents (Cursor + Claude Code + ECC) |
 | [CLAUDE.md](./CLAUDE.md) | Contexte pour Claude Code |
 | [docs/SETUP.md](./docs/SETUP.md) | Checklist environnement |

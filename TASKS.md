@@ -1,9 +1,10 @@
 # TASKS.md — Suivi de tâches EventTLS
 
 > **Source de vérité** pour l'avancement du projet.  
+> **Checklist détaillée (micro-tâches) :** [BACKLOG.md](./BACKLOG.md)  
 > Légende : `[ ]` à faire · `[~]` en cours · `[x]` terminé · `[—]` annulé
 
-**Dernière mise à jour :** Phase 0 — scaffolding Angular terminé
+**Dernière mise à jour :** Phase 0 terminée — démarrage Phase 1
 
 ---
 
@@ -16,8 +17,8 @@
 | EVT-0.3 | Configurer règles Cursor (.cursor/rules/) | Cursor | [x] |
 | EVT-0.4 | Installer ECC officiel ([affaan-m/ECC](https://github.com/affaan-m/ECC)) Cursor + Claude | Cursor | [x] |
 | EVT-0.5 | Préparer migration Supabase SQL | Cursor | [x] |
-| EVT-0.6 | Créer projet Supabase + appliquer migration | Toi | [ ] |
-| EVT-0.7 | Vérifier Node.js + Angular CLI installés | Toi | [ ] |
+| EVT-0.6 | Créer projet Supabase + appliquer migration | Toi | [x] |
+| EVT-0.7 | Vérifier Node.js + Angular CLI installés | Toi | [x] |
 | EVT-0.8 | `ng new eventtls` + dépendances initiales | Cursor | [x] |
 | EVT-0.9 | Configurer Tailwind + Angular Material + thème | Cursor | [x] |
 | EVT-0.10 | Configurer environments Supabase | Cursor | [x] |
@@ -145,20 +146,20 @@
 
 ## Comment utiliser ce fichier
 
-1. **Avant chaque session** : trouve la première tâche `[ ]` de la phase en cours
-2. **Pendant** : passe en `[~]`
-3. **Après validation** (`ng build` OK) : passe en `[x]`
+1. **Avant chaque session** : ouvrir [BACKLOG.md](./BACKLOG.md) et [CURRENT-SPRINT.md](./docs/CURRENT-SPRINT.md)
+2. **Pendant** : cocher les micro-tâches dans BACKLOG.md, passer EVT en `[~]` dans TASKS.md
+3. **Après validation** (`ng build` OK) : EVT en `[x]` dans TASKS.md
 4. **Commit** : un commit par tâche ou par petit groupe cohérent
 
 ## Statistiques
 
 | Phase | Total | Fait | % |
 |-------|-------|------|---|
-| 0 | 10 | 8 | 80% |
+| 0 | 10 | 10 | 100% |
 | 1 | 9 | 0 | 0% |
 | 2 | 10 | 0 | 0% |
 | 3 | 9 | 0 | 0% |
 | 4 | 7 | 0 | 0% |
 | 5 | 8 | 0 | 0% |
 | 6 | 7 | 0 | 0% |
-| **Total** | **60** | **8** | **13%** |
+| **Total** | **60** | **10** | **17%** |
