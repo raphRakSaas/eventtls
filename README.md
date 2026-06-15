@@ -33,11 +33,11 @@ Plateforme de découverte et gestion d'événements à Toulouse.
 
 ```bash
 cp .env.example .env.local
-# Renseigner SUPABASE_URL et SUPABASE_ANON_KEY dans .env.local
-# puis copier les mêmes valeurs dans src/environments/environment.development.ts
+# Renseigner SUPABASE_URL et SUPABASE_ANON_KEY dans .env.local (gitignored)
 
 npm install
-ng serve
+npm run setup:env   # génère environment.development.local.ts (gitignored)
+npm start           # ou ng serve
 ```
 
 Ouvrir [http://localhost:4200](http://localhost:4200).

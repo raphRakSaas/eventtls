@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "setup:env": "node scripts/sync-env.mjs",
+    "prestart": "npm run setup:env"
   },
   "private": true,
   "packageManager": "npm@11.6.0",

@@ -62,21 +62,24 @@ Storage → New bucket :
 
 ## Variables d'environnement
 
+Les secrets **ne vont jamais** dans les fichiers versionnés sous `src/environments/`.
+
 ```bash
-cp .env.example .env
-# Remplir SUPABASE_URL et SUPABASE_ANON_KEY
+cp .env.example .env.local
+# Remplir SUPABASE_URL et SUPABASE_ANON_KEY dans .env.local (gitignored)
+
+npm run setup:env
+# → génère src/environments/environment.development.local.ts (gitignored)
 ```
 
-Après `ng new`, créer aussi :
+| Fichier | Versionné | Rôle |
+|---------|-----------|------|
+| `.env.local` | Non | Source unique des secrets en local |
+| `environment.ts` | Oui | Production (placeholders ou variables CI au deploy) |
+| `environment.development.local.example.ts` | Oui | Modèle documenté, sans secrets |
+| `environment.development.local.ts` | Non | Généré par `setup:env`, utilisé par `ng serve` |
 
-```typescript
-// src/environments/environment.ts
-export const environment = {
-  production: false,
-  supabaseUrl: '...',
-  supabaseAnonKey: '...',
-};
-```
+`npm start` lance `setup:env` automatiquement avant `ng serve`.
 
 ---
 

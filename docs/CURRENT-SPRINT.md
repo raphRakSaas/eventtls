@@ -25,7 +25,7 @@
 
 ### Checklist session
 
-- [ ] Clés Supabase copiées dans `src/environments/environment.development.ts`
+- [ ] Clés Supabase dans `.env.local` puis `npm run setup:env`
 - [ ] `ng serve` OK sur http://localhost:4200
 - [ ] Démarrer EVT-1.1 — structure dossiers
 
