@@ -4,7 +4,7 @@
 > **Checklist détaillée (micro-tâches) :** [BACKLOG.md](./BACKLOG.md)  
 > Légende : `[ ]` à faire · `[~]` en cours · `[x]` terminé · `[—]` annulé
 
-**Dernière mise à jour :** Phase 0 terminée — démarrage Phase 1
+**Dernière mise à jour :** Phase 1 en cours — EVT-1.1 et EVT-1.2 terminés
 
 ---
 
@@ -31,8 +31,8 @@
 
 | ID | Tâche | Compétence Angular | Agent | Statut |
 |----|-------|-------------------|-------|--------|
-| EVT-1.1 | Structure dossiers core/shared/features | Architecture | Cursor | [ ] |
-| EVT-1.2 | `app.routes.ts` + lazy loading | Routing | Cursor | [ ] |
+| EVT-1.1 | Structure dossiers core/shared/features | Architecture | Cursor | [x] |
+| EVT-1.2 | `app.routes.ts` + lazy loading | Routing | Cursor | [x] |
 | EVT-1.3 | `AuthService` (login, register, session) | Services, DI, Signals | Cursor | [ ] |
 | EVT-1.4 | `auth.guard.ts` + `role.guard.ts` | Guards fonctionnels | Claude Code | [ ] |
 | EVT-1.5 | Layout global (navbar + router-outlet) | Composants standalone | Cursor | [ ] |
@@ -156,10 +156,10 @@
 | Phase | Total | Fait | % |
 |-------|-------|------|---|
 | 0 | 10 | 10 | 100% |
-| 1 | 9 | 0 | 0% |
+| 1 | 9 | 2 | 22% |
 | 2 | 10 | 0 | 0% |
 | 3 | 9 | 0 | 0% |
 | 4 | 7 | 0 | 0% |
 | 5 | 8 | 0 | 0% |
 | 6 | 7 | 0 | 0% |
-| **Total** | **60** | **10** | **17%** |
+| **Total** | **60** | **12** | **20%** |

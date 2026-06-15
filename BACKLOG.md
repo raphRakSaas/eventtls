@@ -4,7 +4,7 @@
 > **Comment l'utiliser :** coche `[x]` au fur et à mesure. Une case = une action concrète et vérifiable.  
 > **Liens :** vue macro → [TASKS.md](./TASKS.md) · sprint actuel → [docs/CURRENT-SPRINT.md](./docs/CURRENT-SPRINT.md) · spec → [cahier_de_charge.md](./cahier_de_charge.md)
 
-**Dernière mise à jour :** 15 juin 2026
+**Dernière mise à jour :** 15 juin 2026 — EVT-1.1 et EVT-1.2 validés
 
 ---
 
@@ -14,14 +14,14 @@
 | Phase     | Thème              | Cases   | Cochées | %       |
 | --------- | ------------------ | ------- | ------- | ------- |
 | 0         | Mise en place      | 42      | 42      | 100%    |
-| 1         | Fondations + Auth  | 58      | 0       | 0%      |
+| 1         | Fondations + Auth  | 58      | 24      | 41%     |
 | 2         | Liste + carte      | 52      | 0       | 0%      |
 | 3         | Détail + favoris   | 48      | 0       | 0%      |
 | 4         | Création événement | 44      | 0       | 0%      |
 | 5         | Dashboard          | 40      | 0       | 0%      |
 | 6         | Polish + deploy    | 36      | 0       | 0%      |
 | B         | Idées hors scope   | 8       | 0       | 0%      |
-| **Total** |                    | **328** | **42**  | **13%** |
+| **Total** |                    | **328** | **66**  | **20%** |
 
 
 > Mettre à jour les chiffres du tableau quand tu coches des sections entières.
@@ -30,11 +30,11 @@
 
 ## 🎯 Prochaines actions (dans l'ordre)
 
-1. [ ] **EVT-1.1** — Créer l'arborescence `core/` / `shared/` / `features/`
-2. [ ] **EVT-1.2** — Routes + lazy loading
-3. [ ] **EVT-1.3** — `AuthService` Supabase
-4. [ ] **EVT-1.5** — Layout global (remplacer le template Angular par défaut)
-5. [ ] **EVT-1.6** — Pages login + register
+1. [ ] **EVT-1.3** — `SupabaseService` + `AuthService`
+2. [ ] **EVT-1.5** — Layout global + navbar (`RouterLink`)
+3. [ ] **EVT-1.6** — Pages login + register (Reactive Forms)
+4. [ ] **EVT-1.4** — Guards fonctionnels
+5. [ ] **EVT-1.8** — Trigger profil Supabase à l'inscription
 
 ---
 
@@ -72,8 +72,8 @@
 - [x] Authentication → Providers → Email activé
 - [x] Authentication → URL Configuration → Site URL = `http://localhost:4200`
 - [x] Authentication → URL Configuration → Redirect URLs inclut `http://localhost:4200/`**
-- [x] SQL : trigger `handle_new_user` pour créer un profil à l'inscription (EVT-1.8, Phase 1)
-- [x] Test manuel : créer un user test dans Auth → Users (optionnel)
+- [ ] SQL : trigger `handle_new_user` pour créer un profil à l'inscription (EVT-1.8, Phase 1)
+- [ ] Test manuel : créer un user test dans Auth → Users (optionnel)
 
 ### Environnement local (EVT-0.7) ✅
 
@@ -125,37 +125,37 @@
 
 **Critère de fin :** login/register OK, guards actifs, layout global, `ng build` OK.
 
-### EVT-1.1 — Structure dossiers
+### EVT-1.1 — Structure dossiers ✅
 
-- [ ] Créer `src/app/core/services/`
-- [ ] Créer `src/app/core/guards/`
-- [ ] Créer `src/app/core/interceptors/`
-- [ ] Créer `src/app/core/resolvers/`
-- [ ] Créer `src/app/core/models/` (types partagés core)
-- [ ] Créer `src/app/shared/components/`
-- [ ] Créer `src/app/shared/pipes/`
-- [ ] Créer `src/app/features/home/`
-- [ ] Créer `src/app/features/events/`
-- [ ] Créer `src/app/features/auth/`
-- [ ] Créer `src/app/features/dashboard/`
-- [ ] Créer `src/app/features/profile/`
+- [x] Créer `src/app/core/services/`
+- [x] Créer `src/app/core/guards/`
+- [x] Créer `src/app/core/interceptors/`
+- [x] Créer `src/app/core/resolvers/`
+- [x] Créer `src/app/core/models/` (types partagés core)
+- [x] Créer `src/app/shared/components/`
+- [x] Créer `src/app/shared/pipes/`
+- [x] Créer `src/app/features/home/`
+- [x] Créer `src/app/features/events/`
+- [x] Créer `src/app/features/auth/`
+- [x] Créer `src/app/features/dashboard/`
+- [x] Créer `src/app/features/profile/`
 - [ ] Barrel exports optionnels (`index.ts`) si utile
-- [ ] Supprimer le template par défaut Angular (`app.html` géant)
+- [x] Supprimer le template par défaut Angular (`app.html` → `router-outlet` dans `app.ts`)
 
-### EVT-1.2 — Routing + lazy loading
+### EVT-1.2 — Routing + lazy loading ✅
 
-- [ ] Définir routes dans `app.routes.ts` :
-  - [ ] `''` → Home (lazy)
-  - [ ] `'events'` → EventsList (lazy)
-  - [ ] `'events/:id'` → EventDetail (lazy + resolver plus tard)
-  - [ ] `'auth/login'` → Login (lazy)
-  - [ ] `'auth/register'` → Register (lazy)
-  - [ ] `'dashboard'` → `dashboard.routes` (lazy + guards plus tard)
-  - [ ] `'profile'` → Profile (lazy + guard plus tard)
-- [ ] Route wildcard `*`* → redirect ou page 404
-- [ ] Chaque feature = `loadComponent` ou `loadChildren`
-- [ ] Vérifier que chaque route lazy charge un chunk séparé (`ng build` → lazy chunks)
-- [ ] `RouterLink` / `routerLinkActive` préparés pour la navbar
+- [x] Définir routes dans `app.routes.ts` :
+  - [x] `''` → Home (lazy)
+  - [x] `'events'` → EventsList (lazy)
+  - [x] `'events/:id'` → EventDetail (lazy + resolver plus tard)
+  - [x] `'auth/login'` → Login (lazy)
+  - [x] `'auth/register'` → Register (lazy)
+  - [x] `'dashboard'` → `dashboard.routes` (lazy + guards plus tard)
+  - [x] `'profile'` → Profile (lazy + guard plus tard)
+- [x] Route wildcard `**` → redirect vers `''`
+- [x] Chaque feature = `loadComponent` ou `loadChildren`
+- [x] Vérifier lazy chunks séparés (`ng build` — home, events-list, login, etc.)
+- [ ] `RouterLink` / `routerLinkActive` préparés pour la navbar (→ EVT-1.5)
 
 ### EVT-1.3 — AuthService
 
