@@ -65,3 +65,11 @@ Ce projet est conçu pour un apprentissage Angular avec assistance IA mixte :
 | [AGENTS.md](./AGENTS.md) | Qui fait quoi (Cursor vs Claude Code) |
 | [docs/ECC-SETUP.md](./docs/ECC-SETUP.md) | Installation et multi-agents ECC |
 | [docs/WORKFLOW.md](./docs/WORKFLOW.md) | Scénarios de travail quotidiens |
+
+commandes de démarrage :
+```bash
+npm install
+npm run setup:env   # génère environment.development.local.ts (gitignored)
+ng serve           # ou npm start
+ng build           # build le projet
+```

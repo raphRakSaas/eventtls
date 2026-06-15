@@ -152,25 +152,25 @@
   - [x] `'auth/register'` → Register (lazy)
   - [x] `'dashboard'` → `dashboard.routes` (lazy + guards plus tard)
   - [x] `'profile'` → Profile (lazy + guard plus tard)
-- [x] Route wildcard `**` → redirect vers `''`
+- [x] Route wildcard `*`* → redirect vers `''`
 - [x] Chaque feature = `loadComponent` ou `loadChildren`
 - [x] Vérifier lazy chunks séparés (`ng build` — home, events-list, login, etc.)
-- [ ] `RouterLink` / `routerLinkActive` préparés pour la navbar (→ EVT-1.5)
+- [x] `RouterLink` / `routerLinkActive` préparés pour la navbar (→ EVT-1.5)
 
 ### EVT-1.3 — AuthService
 
-- [ ] Créer `core/services/supabase.service.ts` — client Supabase singleton (`createClient` + `environment`)
-- [ ] Créer `core/models/user-profile.model.ts` — type `Profile`, rôle `user` | `organizer`
-- [ ] Créer `auth.service.ts` :
-  - [ ] `signal` / `computed` pour `currentUser`, `session`, `isAuthenticated`
-  - [ ] `login(email, password)` → `signInWithPassword`
-  - [ ] `register(email, password, displayName)` → `signUp`
-  - [ ] `logout()` → `signOut`
-  - [ ] `initSession()` — écouter `onAuthStateChange` au démarrage
-  - [ ] Charger le profil depuis table `profiles` après login
-  - [ ] Gestion erreurs avec messages en français
-- [ ] Appeler `initSession()` dans `APP_INITIALIZER` ou `app.config.ts`
-- [ ] Tester login/logout en console (sans UI d'abord)
+- [x] Créer `core/services/supabase.service.ts` — client Supabase singleton (`createClient` + `environment`)
+- [x] Créer `core/models/user-profile.model.ts` — type `Profile`, rôle `user` | `organizer`
+- [x] Créer `auth.service.ts` :
+  - [x] `signal` / `computed` pour `currentUser`, `session`, `isAuthenticated`
+  - [x] `login(email, password)` → `signInWithPassword`
+  - [x] `register(email, password, displayName)` → `signUp`
+  - [x] `logout()` → `signOut`
+  - [x] `initSession()` — écouter `onAuthStateChange` au démarrage
+  - [x] Charger le profil depuis table `profiles` après login
+  - [x] Gestion erreurs avec messages en français
+- [x] Appeler `initSession()` dans `APP_INITIALIZER` ou `app.config.ts`
+- [x] Tester login/logout en console (sans UI d'abord)
 
 ### EVT-1.4 — Guards fonctionnels
 
