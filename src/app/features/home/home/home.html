@@ -1,55 +1,267 @@
+<!-- ─── HERO ─────────────────────────────────────────────── -->
 <section class="hero">
-  <div class="hero-inner">
-    <p class="hero-badge">Open Data · Toulouse Métropole</p>
-    <h1 class="hero-title">La Ville Rose,<br />événement après événement</h1>
-    <p class="hero-lead">
-      Concerts, expositions, festivals et sorties culturelles — explorez librement ce qui se
-      passe près de chez vous.
+  <div class="hero-left">
+    <p class="hero-eyebrow">
+      <span class="hero-dot"></span>
+      Open Data · Toulouse Métropole
     </p>
-
+    <h1 class="hero-title">
+      La Ville Rose,<br>
+      <em>événement</em><br>
+      après événement.
+    </h1>
+    <p class="hero-lead">
+      Concerts, expositions, festivals et sorties culturelles —
+      découvrez ce qui se passe près de chez vous.
+    </p>
+    <div class="hero-chips" role="navigation" aria-label="Filtres rapides">
+      <a class="chip chip--on" routerLink="/events">Tout</a>
+      <a class="chip" routerLink="/events">Ce soir</a>
+      <a class="chip" routerLink="/events">Ce week-end</a>
+      <a class="chip chip--free" routerLink="/events">Gratuit</a>
+      <a class="chip" routerLink="/events">Concerts</a>
+      <a class="chip" routerLink="/events">Expos</a>
+      <a class="chip" routerLink="/events">Spectacles</a>
+      <a class="chip" routerLink="/events">Famille</a>
+    </div>
     <div class="hero-actions">
       <a routerLink="/events" class="btn btn-primary">Explorer les événements</a>
-      <a routerLink="/auth/register" class="btn btn-secondary">Créer un compte</a>
+      <a routerLink="/auth/register" class="btn btn-outline">Créer un compte</a>
     </div>
-
-    <p class="hero-note">
-      Aucun compte requis pour parcourir. Inscrivez-vous uniquement pour réserver, favoriser ou
-      organiser.
-    </p>
+    <p class="hero-notice">Aucun compte requis pour parcourir.</p>
   </div>
 
-  <div class="hero-cards" aria-hidden="true">
-    <article class="hero-card hero-card--1">
-      <span class="hero-card-label">Ce week-end</span>
-      <strong>Jazz au Bazacle</strong>
+  <div class="hero-collage" aria-hidden="true">
+    <article class="hc hc--1">
+      <div class="hc-img hc-img--rose"></div>
+      <span class="hc-badge">Ce soir</span>
+      <div class="hc-info">
+        <strong>Jazz au Bazacle</strong>
+        <span>19h30 · Halle aux Grains</span>
+      </div>
     </article>
-    <article class="hero-card hero-card--2">
-      <span class="hero-card-label">Expo</span>
-      <strong>Les Abattoirs</strong>
+    <article class="hc hc--2">
+      <div class="hc-img hc-img--ciel"></div>
+      <span class="hc-badge hc-badge--blue">Exposition</span>
+      <div class="hc-info">
+        <strong>Les Abattoirs</strong>
+        <span>Jusqu'au 30 juin</span>
+      </div>
     </article>
-    <article class="hero-card hero-card--3">
-      <span class="hero-card-label">Marché</span>
-      <strong>Place du Capitole</strong>
+    <article class="hc hc--3">
+      <div class="hc-img hc-img--vert"></div>
+      <span class="hc-badge hc-badge--green">Gratuit</span>
+      <div class="hc-info">
+        <strong>Marché du Capitole</strong>
+        <span>Dim. · Capitole</span>
+      </div>
     </article>
   </div>
 </section>
 
-<section class="home-features">
-  <article class="feature-card">
-    <h2>Découvrir</h2>
-    <p>Liste, recherche et carte des événements officiels toulousains.</p>
-    <a routerLink="/events" class="feature-link">Voir la programmation →</a>
-  </article>
+<!-- ─── À LA UNE ─────────────────────────────────────────── -->
+<section class="hs">
+  <div class="hs-wrap">
+    <header class="hs-hd">
+      <h2 class="hs-title">À la une</h2>
+      <a routerLink="/events" class="hs-more">Tout voir →</a>
+    </header>
+    <div class="bento">
+      <article class="ev ev--xl">
+        <div class="ev-img ev-img--fete">
+          <span class="ev-tag">Festival</span>
+        </div>
+        <div class="ev-body">
+          <time class="ev-date">Sam. 21 juin 2025</time>
+          <h3 class="ev-title">Fête de la Musique — Toulouse</h3>
+          <p class="ev-place">📍 Partout à Toulouse</p>
+          <div class="ev-footer">
+            <span class="ev-price ev-price--free">Gratuit</span>
+            <span class="ev-interest">★ 4.8 · 2 341 intéressés</span>
+          </div>
+        </div>
+      </article>
+      <article class="ev ev--sm">
+        <div class="ev-img ev-img--jazz">
+          <span class="ev-tag ev-tag--blue">Concert</span>
+        </div>
+        <div class="ev-body">
+          <time class="ev-date">Sam. 22 juin</time>
+          <h3 class="ev-title">Jazz au fil du fleuve</h3>
+          <p class="ev-place">📍 Quai de la Daurade</p>
+          <span class="ev-price">Dès 12 €</span>
+        </div>
+      </article>
+      <article class="ev ev--sm">
+        <div class="ev-img ev-img--expo">
+          <span class="ev-tag ev-tag--purple">Expo</span>
+        </div>
+        <div class="ev-body">
+          <time class="ev-date">Jusqu'au 30 juin</time>
+          <h3 class="ev-title">Présences arabes</h3>
+          <p class="ev-place">📍 Les Abattoirs</p>
+          <span class="ev-price ev-price--free">Entrée libre</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <article class="feature-card">
-    <h2>Participer</h2>
-    <p>Inscrivez-vous à un événement et retrouvez vos favoris sur votre profil.</p>
-    <a routerLink="/auth/register" class="feature-link">Créer un compte →</a>
-  </article>
+<!-- ─── CE WEEK-END ──────────────────────────────────────── -->
+<section class="hs hs--warm">
+  <div class="hs-wrap">
+    <header class="hs-hd">
+      <h2 class="hs-title">Ce week-end</h2>
+      <a routerLink="/events" class="hs-more">Tout voir →</a>
+    </header>
+    <div class="sr">
+      <article class="sr-card">
+        <div class="sr-img sr-img--violet">
+          <span class="ev-tag ev-tag--purple">Spectacle</span>
+        </div>
+        <div class="sr-body">
+          <time class="ev-date">Sam. 22 juin</time>
+          <h3 class="sr-title">La Nuit du Cirque</h3>
+          <p class="ev-place">📍 Théâtre Garonne</p>
+          <span class="ev-price">28 €</span>
+        </div>
+      </article>
+      <article class="sr-card">
+        <div class="sr-img sr-img--orange">
+          <span class="ev-tag">Marché</span>
+        </div>
+        <div class="sr-body">
+          <time class="ev-date">Dim. 23 juin</time>
+          <h3 class="sr-title">Marché des Créateurs</h3>
+          <p class="ev-place">📍 Allées Paul Feuga</p>
+          <span class="ev-price ev-price--free">Gratuit</span>
+        </div>
+      </article>
+      <article class="sr-card">
+        <div class="sr-img sr-img--teal">
+          <span class="ev-tag ev-tag--blue">Science</span>
+        </div>
+        <div class="sr-body">
+          <time class="ev-date">Sam.–Dim.</time>
+          <h3 class="sr-title">Cosmos · Cité de l'Espace</h3>
+          <p class="ev-place">📍 Cité de l'Espace</p>
+          <span class="ev-price">Dès 22 €</span>
+        </div>
+      </article>
+      <article class="sr-card">
+        <div class="sr-img sr-img--brick">
+          <span class="ev-tag">Festival</span>
+        </div>
+        <div class="sr-body">
+          <time class="ev-date">Sam. 22 juin</time>
+          <h3 class="sr-title">Rio Loco — Scènes Mundo</h3>
+          <p class="ev-place">📍 Prairie des Filtres</p>
+          <span class="ev-price ev-price--free">Entrée libre</span>
+        </div>
+      </article>
+      <article class="sr-card">
+        <div class="sr-img sr-img--sand">
+          <span class="ev-tag ev-tag--green">Famille</span>
+        </div>
+        <div class="sr-body">
+          <time class="ev-date">Dim. 23 juin</time>
+          <h3 class="sr-title">Atelier aquarelle enfants</h3>
+          <p class="ev-place">📍 Médiathèque Cabanis</p>
+          <span class="ev-price ev-price--free">Gratuit</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <article class="feature-card">
-    <h2>Organiser</h2>
-    <p>Publiez vos événements et suivez vos statistiques depuis le dashboard.</p>
-    <a routerLink="/auth/login" class="feature-link">Espace organisateur →</a>
-  </article>
+<!-- ─── CONCERTS & MUSIQUE ───────────────────────────────── -->
+<section class="hs">
+  <div class="hs-wrap">
+    <header class="hs-hd">
+      <h2 class="hs-title">Concerts & Musique</h2>
+      <a routerLink="/events" class="hs-more">Tout voir →</a>
+    </header>
+    <div class="sr">
+      <article class="sr-card">
+        <div class="sr-img sr-img--dark">
+          <span class="ev-tag ev-tag--blue">Jazz</span>
+        </div>
+        <div class="sr-body">
+          <time class="ev-date">Ven. 28 juin</time>
+          <h3 class="sr-title">Nuit Jazz à la Daurade</h3>
+          <p class="ev-place">📍 Quai de la Daurade</p>
+          <span class="ev-price ev-price--free">Gratuit</span>
+        </div>
+      </article>
+      <article class="sr-card">
+        <div class="sr-img sr-img--neon">
+          <span class="ev-tag ev-tag--blue">Concert</span>
+        </div>
+        <div class="sr-body">
+          <time class="ev-date">Jeu. 3 juil.</time>
+          <h3 class="sr-title">Woodkid au Zénith</h3>
+          <p class="ev-place">📍 Zénith de Toulouse</p>
+          <span class="ev-price">Dès 35 €</span>
+        </div>
+      </article>
+      <article class="sr-card">
+        <div class="sr-img sr-img--pink">
+          <span class="ev-tag">Folk</span>
+        </div>
+        <div class="sr-body">
+          <time class="ev-date">Sam. 29 juin</time>
+          <h3 class="sr-title">Folk en liberté</h3>
+          <p class="ev-place">📍 Prairie des Filtres</p>
+          <span class="ev-price ev-price--free">Entrée libre</span>
+        </div>
+      </article>
+      <article class="sr-card">
+        <div class="sr-img sr-img--gold">
+          <span class="ev-tag">Classique</span>
+        </div>
+        <div class="sr-body">
+          <time class="ev-date">Dim. 30 juin</time>
+          <h3 class="sr-title">Orchestre du Capitole</h3>
+          <p class="ev-place">📍 Halle aux Grains</p>
+          <span class="ev-price">Dès 15 €</span>
+        </div>
+      </article>
+      <article class="sr-card">
+        <div class="sr-img sr-img--purple">
+          <span class="ev-tag ev-tag--blue">Électro</span>
+        </div>
+        <div class="sr-body">
+          <time class="ev-date">Ven. 5 juil.</time>
+          <h3 class="sr-title">Electro au Bikini</h3>
+          <p class="ev-place">📍 Le Bikini</p>
+          <span class="ev-price">20 €</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CARTE (TEASER PHASE 2) ───────────────────────────── -->
+<section class="map-teaser">
+  <div class="map-teaser-wrap">
+    <div class="map-text">
+      <p class="map-eyebrow">Bientôt · Phase 2</p>
+      <h2>Toulouse sur la carte</h2>
+      <p class="map-lead">
+        Repérez les événements près de chez vous, filtrez par quartier
+        et planifiez vos sorties visuellement.
+      </p>
+      <a routerLink="/events" class="btn btn-white">Explorer les événements</a>
+    </div>
+    <div class="map-art" aria-hidden="true">
+      <div class="map-pins">
+        <span class="map-pin p1">📍</span>
+        <span class="map-pin p2">📍</span>
+        <span class="map-pin p3">📍</span>
+        <span class="map-label ml1">Jazz</span>
+        <span class="map-label ml2">Expo</span>
+        <span class="map-label ml3">Festival</span>
+      </div>
+    </div>
+  </div>
 </section>

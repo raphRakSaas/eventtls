@@ -33,3 +33,23 @@
     color: var(--ville-primary);
   }
 }
+
+.btn-outline {
+  border: 1.5px solid rgb(26 26 26 / 18%);
+  color: var(--ville-text);
+
+  &:hover {
+    border-color: var(--ville-primary);
+    color: var(--ville-primary);
+  }
+}
+
+.btn-white {
+  background: white;
+  color: var(--ville-text);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
+
+  &:hover {
+    background: var(--ville-surface-alt);
+  }
+}
